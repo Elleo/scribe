@@ -19,19 +19,17 @@
     </head>
 
     <body>
-        <center>
-            <nav class="navbar navbar-light bg-light navbar-expand-lg" style='width: 100%;'>
-                <div class="container-fluid">
+        <div class="wrapper">
+            <nav id="sidebar">
+                <div class='sidebar-header'>
                     <a class="navbar-brand" href="/">[LOGO]</a>
-                    <ul class="navbar-nav mr-auto">
-                        <li><a class="navbar-link" href="/">Welcome!</a></li>
-                        <li><a class="navbar-link" href="/shows/">Shows</a></li>
-                    </ul>
                 </div>
+                <br />
+                <ul class="list-unstyled components">
+                    <li><a class="navbar-link" href="/">Welcome!</a></li>
+                    <li><a class="navbar-link" href="/shows/">Shows</a></li>
+                </ul>
             </nav>
-        </center>
-
-        <br />
 
         {% block messages %}
             <div class="row">
@@ -53,7 +51,7 @@
                     {% endif %}
                 </div>
             </div>
-       {% endblock messages %}
+        {% endblock messages %}
 
         <div id="content" class="container">
             <center>
