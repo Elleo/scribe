@@ -1,0 +1,71 @@
+@font-face {
+     font-family: Aboreto;
+     src: url(/staticfiles/Aboreto-Regular.ttf);
+}
+
+a.navbar-link {
+    margin-right: 0.6em;
+    margin-left: 0.5em;
+}
+
+body {
+    background: white;
+}
+
+h1 {
+    font-family: 'Aboreto', serif;
+    margin-bottom: 0.75em;
+}
+
+.bg-light {
+    background-color: white !important;
+    margin-bottom: 2em;
+}
+
+select {
+    width: 300px;
+}
+
+span {
+    font-weight: normal;
+}
+
+a {
+    font-weight: 500 !important;
+    color: #498BF9 !important;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+select, input {
+    background: white;
+    border: 1px solid #999;
+    border-radius: 5px;
+    color: black;
+}
+
+select, input {
+    padding: 5px;
+}
+
+input[type="text"], input[type="url"], input[type="tel"], input[type="email"], input[type="password"] {
+    width: 300px;
+}
+
+input[type="submit"]:hover {
+    border-bottom: 2px solid #333;
+}
+
+input[type="submit"]:active {
+    border-bottom: 1px solid #999 !important;
+}
+
+input[type="number"] {
+    width: 5em;
+}
+
+td {
+    padding: 0.5em;
+}
