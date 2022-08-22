@@ -8,8 +8,10 @@ import sys
 import os
 import wave
 import re
-import queue
 import json
+import asyncio
+import websockets
+import threading
 
 
 class AudioProcessor(object):
@@ -19,6 +21,7 @@ class AudioProcessor(object):
         sink = self.pipeline.get_by_name("sink")
         sink.connect("new-sample", self.on_new_sample)
         self.load_model()
+        self.lines = [""]
 
     def load_model(self, text="", language="en-us"):
         words = str(re.split("[.,;!?\-\n]", text.lower())).replace(" '", " \"").replace("',", "\",").replace("['", "[\"").replace("']", "\"]")
@@ -49,13 +52,31 @@ class AudioProcessor(object):
         else:
             text = json.loads(self.rec.PartialResult())['partial']
         if len(text) > 0:
-            print(text)
+            self.lines[-1] = text
+            if final:
+                self.lines.append("")
+                if len(self.lines) > 3:
+                    self.lines.pop(0)
         return Gst.FlowReturn.OK
+
+    def websocket_worker(self):
+        async def handler(ws, path):
+            while True:
+                await ws.send("<br />".join(self.lines))
+                await asyncio.sleep(1)
+
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+
+        start_server = websockets.serve(handler, "localhost", 31130)
+        loop.run_until_complete(start_server)
+        loop.run_forever()
 
 
 if __name__ == "__main__":
     Gst.init(None)
     ap = AudioProcessor()
     ap.start()
+    threading.Thread(target=ap.websocket_worker, daemon=True).start()
     loop = GLib.MainLoop()
     loop.run()
