@@ -7,10 +7,11 @@ a.navbar-link {
     margin-right: 0.6em;
     margin-left: 0.5em;
     text-decoration: none;
+    line-height: 2em;
 }
 
 body {
-    background-color: white;
+    background-color: #d2f1ff;
 }
 
 #wrapper {
@@ -35,10 +36,23 @@ body {
     padding: 20px;
     background-color: #6998AB;
     text-align: center;
+    height: 200px;
 }
 
 #sidebar ul li a:hover {
     text-decoration: none;
+}
+
+#header {
+    color: white;
+    background-color: #6998AB;
+    text-align: center;
+    height: 200px;
+    margin-left: 250px;
+}
+
+#header h1, #header h2 {
+    color: white;
 }
 
 #content {
@@ -49,9 +63,17 @@ body {
 
 h1 {
     font-family: 'Aboreto', serif;
-    margin-bottom: 0.5em;
     font-size: 90px;
-    color: #1A374D;
+    padding-top: 10px;
+}
+
+h2 {
+    font-family: 'Aboreto', serif;
+}
+
+.svg-inline--fa {
+    margin-right: 5px;
+    vertical-align: -0.175em !important;
 }
 
 .bg-light {
@@ -108,6 +130,7 @@ td {
 }
 
 #logo {
-    max-width: 200px;
-    height: auto;
+    max-height: 150px;
+    margin-top: 10px;
+    width: auto;
 }
