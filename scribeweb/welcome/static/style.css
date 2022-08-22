@@ -19,7 +19,7 @@ body {
 }
 
 #sidebar {
-    background-color: #F9F5EB;
+    background-color: #B1D0E0;
     min-width: 250px;
     max-width: 250px;
     min-height: 100vh;
@@ -33,7 +33,7 @@ body {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background-color: #EAE3D2;
+    background-color: #6998AB;
     text-align: center;
 }
 
@@ -51,7 +51,7 @@ h1 {
     font-family: 'Aboreto', serif;
     margin-bottom: 0.5em;
     font-size: 90px;
-    color: #1C3879;
+    color: #1A374D;
 }
 
 .bg-light {
@@ -69,7 +69,7 @@ span {
 
 a {
     font-weight: 500 !important;
-    color: #607EAA !important;
+    color: #406882 !important;
 }
 
 a:hover {
@@ -105,4 +105,9 @@ input[type="number"] {
 
 td {
     padding: 0.5em;
+}
+
+#logo {
+    max-width: 200px;
+    height: auto;
 }
