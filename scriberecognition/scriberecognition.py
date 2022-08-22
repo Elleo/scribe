@@ -55,14 +55,23 @@ class AudioProcessor(object):
             self.lines[-1] = text
             if final:
                 self.lines.append("")
-                if len(self.lines) > 3:
+                if len(self.lines) > 6:
                     self.lines.pop(0)
         return Gst.FlowReturn.OK
 
     def websocket_worker(self):
         async def handler(ws, path):
             while True:
-                await ws.send("<br />".join(self.lines))
+                text = " ".join(self.lines)
+                line = ""
+                output_lines = []
+                for word in text.split(" "):
+                    if len(line) + len(word) > 15:
+                        output_lines.append(line)
+                        line = word
+                    else:
+                        line += " " + word
+                await ws.send(" ".join(output_lines[-5:]))
                 await asyncio.sleep(1)
 
         loop = asyncio.new_event_loop()
