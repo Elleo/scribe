@@ -21,22 +21,22 @@ body {
 
 #sidebar {
     background-color: #B1D0E0;
-    min-width: 250px;
-    max-width: 250px;
+    width: 200px;
     min-height: 100vh;
     font-size: 16pt;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 999;
+    z-index: 0;
     transition: all 0.3s;
 }
 
 #sidebar .sidebar-header {
     padding: 20px;
+    padding-left: 0px;
     background-color: #6998AB;
     text-align: center;
-    height: 200px;
+    height: 180px;
 }
 
 #sidebar ul li a:hover {
@@ -47,8 +47,14 @@ body {
     color: white;
     background-color: #6998AB;
     text-align: center;
-    height: 200px;
-    margin-left: 250px;
+    height: 180px;
+    box-shadow: 0px 1px 2px 1px #6998AB;
+    margin-bottom: 2em;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 #header h1, #header h2 {
@@ -57,7 +63,8 @@ body {
 
 #content {
     text-align: center;
-    margin-left: 250px;
+    margin-left: 200px;
+    margin-top: 200px;
     padding: 1em;
 }
 
@@ -73,6 +80,7 @@ h2 {
 
 .svg-inline--fa {
     margin-right: 5px;
+    margin-left: 1em;
     vertical-align: -0.175em !important;
 }
 
@@ -136,15 +144,17 @@ td {
 }
 
 #recognised {
-    background: black;
-    color: yellow;
+    background: #6998AB;
+    color: white;
+    border: 1px solid #406882;
+    padding: 5px;
     font-family: monospace;
     font-size: 20pt;
     width: 300px;
-    height: 200px;
+    height: 215px;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 1em;
+    margin-top: 0.5em;
     margin-bottom: 1em;
     overflow: hidden;
 }
