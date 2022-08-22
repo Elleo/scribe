@@ -1,20 +1,57 @@
 @font-face {
      font-family: Aboreto;
-     src: url(/staticfiles/Aboreto-Regular.ttf);
+     src: url(/static/fonts/Aboreto-Regular.ttf);
 }
 
 a.navbar-link {
     margin-right: 0.6em;
     margin-left: 0.5em;
+    text-decoration: none;
 }
 
 body {
-    background: white;
+    background-color: white;
+}
+
+#wrapper {
+    display: flex;
+    align-items: stretch;
+}
+
+#sidebar {
+    background-color: #F9F5EB;
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 100vh;
+    font-size: 16pt;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    transition: all 0.3s;
+}
+
+#sidebar .sidebar-header {
+    padding: 20px;
+    background-color: #EAE3D2;
+    text-align: center;
+}
+
+#sidebar ul li a:hover {
+    text-decoration: none;
+}
+
+#content {
+    text-align: center;
+    margin-left: 250px;
+    padding: 1em;
 }
 
 h1 {
     font-family: 'Aboreto', serif;
-    margin-bottom: 0.75em;
+    margin-bottom: 0.5em;
+    font-size: 90px;
+    color: #1C3879;
 }
 
 .bg-light {
@@ -32,7 +69,7 @@ span {
 
 a {
     font-weight: 500 !important;
-    color: #498BF9 !important;
+    color: #607EAA !important;
 }
 
 a:hover {
