@@ -55,6 +55,7 @@ class AudioProcessor(object):
         else:
             text = json.loads(self.rec.PartialResult())['partial']
         if len(text) > 0:
+            text = re.sub(r'(\b)i(\b)', '\1I\2', text)
             self.lines[-1] = text
             self.display.show_text(" ".join(self.lines))
             if final:
