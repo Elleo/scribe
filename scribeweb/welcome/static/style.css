@@ -161,17 +161,30 @@ td {
 
 #meter {
     width: 20px;
-    height: 90px;
-    border-top: 5px solid red;
-    background-color: yellow;
+    height: 180px;
+    border-top: 10px solid #ff6961;
+    background-color: #c1e1c1;
+    border-left: 1px solid #406882;
+    border-right: 1px solid #406882;
+    border-bottom: 1px solid #406882;
     float: left;
+    margin-top: 55px;
 }
 
 #vol {
     width: 20px;
-    height: 95px;
+    height: 190px;
     position: relative;
-    top: -5px;
+    top: -10px;
+    left: -1px;
+    border-left: 1px solid #406882;
+    border-right: 1px solid #406882;
     background-color: black;
     transition: all 0.3s;
+}
+
+#hearing {
+    width: 350px;
+    margin-left: auto;
+    margin-right: auto;
 }

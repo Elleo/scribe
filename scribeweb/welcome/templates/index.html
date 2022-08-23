@@ -14,15 +14,16 @@
 
         var rms_ws = new WebSocket("ws://127.0.0.1:31131/");
         rms_ws.onmessage = function (event) {
-            let v = -parseFloat(event.data);
+            let v = -parseFloat(event.data) * 3;
 		    $('#vol').css('height', v + "px");
         };
     </script>
 
-    <div id='meter'><div id='vol'></div></div>
-
-    What I'm hearing at the moment: <br />
-    <div id='recognised'></div>
+    <div id='hearing'>
+        <div id='meter'><div id='vol'></div></div>
+        What I'm hearing at the moment: <br />
+        <div id='recognised'></div>
+    </div>
 
     <p><small>The hardware designs and software for this device are both open source, published under the <a href='https://www.gnu.org/licenses/gpl-3.0.en.html'>GPL 3.0</a> license. <a href='https://github.com/Elleo/scribe'>Help contribute to the project on our GitHub page</a>.</small></p>
 {% endblock %}

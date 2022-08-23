@@ -80,12 +80,12 @@ class AudioProcessor(object):
                 lines = textwrap.wrap(text, 16)
                 text = " ".join(lines[-5:])
                 await ws.send(text)
-                await asyncio.sleep(0.1)
+                await asyncio.sleep(0.3)
 
         async def rms_handler(ws, path):
             while True:
                 await ws.send(str(self.rms))
-                await asyncio.sleep(0.1)
+                await asyncio.sleep(0.3)
 
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
