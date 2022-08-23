@@ -19,12 +19,16 @@ from display import Display
 class AudioProcessor(object):
 
     def __init__(self):
-        self.pipeline = Gst.parse_launch("autoaudiosrc ! audio/x-raw,format=S16LE,channels=1,rate=16000 ! audioconvert ! audiorate ! appsink name=sink emit-signals=True")
+        self.pipeline = Gst.parse_launch("autoaudiosrc ! level post-messages=true ! audio/x-raw,format=S16LE,channels=1,rate=16000 ! audioconvert ! audiorate ! appsink name=sink emit-signals=True")
         sink = self.pipeline.get_by_name("sink")
         sink.connect("new-sample", self.on_new_sample)
+        bus = self.pipeline.get_bus()
+        bus.add_signal_watch()
+        bus.connect('message::element', self.on_message)
         self.load_model()
         self.lines = [""]
         self.display = Display()
+        self.rms = 0
 
     def load_model(self, text="", language="en-us"):
         words = str(re.split("[.,;!?\-\n]", text.lower())).replace(" '", " \"").replace("',", "\",").replace("['", "[\"").replace("']", "\"]")
@@ -64,20 +68,32 @@ class AudioProcessor(object):
                     self.lines.pop(0)
         return Gst.FlowReturn.OK
 
+    def on_message(self, bus, message):
+        s = message.get_structure()
+        if s.get_name() == 'level':
+            self.rms = s['rms'][-1]
+
     def websocket_worker(self):
-        async def handler(ws, path):
+        async def text_handler(ws, path):
             while True:
                 text = " ".join(self.lines)
                 lines = textwrap.wrap(text, 16)
                 text = " ".join(lines[-5:])
                 await ws.send(text)
-                await asyncio.sleep(1)
+                await asyncio.sleep(0.1)
+
+        async def rms_handler(ws, path):
+            while True:
+                await ws.send(str(self.rms))
+                await asyncio.sleep(0.1)
 
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
 
-        start_server = websockets.serve(handler, "localhost", 31130)
-        loop.run_until_complete(start_server)
+        text_server = websockets.serve(text_handler, "localhost", 31130)
+        loop.run_until_complete(text_server)
+        rms_server = websockets.serve(rms_handler, "localhost", 31131)
+        loop.run_until_complete(rms_server)
         loop.run_forever()
 
 

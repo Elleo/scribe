@@ -158,3 +158,20 @@ td {
     margin-bottom: 1em;
     overflow: hidden;
 }
+
+#meter {
+    width: 20px;
+    height: 90px;
+    border-top: 5px solid red;
+    background-color: yellow;
+    float: left;
+}
+
+#vol {
+    width: 20px;
+    height: 95px;
+    position: relative;
+    top: -5px;
+    background-color: black;
+    transition: all 0.3s;
+}

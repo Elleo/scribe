@@ -7,11 +7,19 @@
 {% block content %}
 
     <script>
-        var ws = new WebSocket("ws://127.0.0.1:31130/");
-        ws.onmessage = function (event) {
+        var text_ws = new WebSocket("ws://127.0.0.1:31130/");
+        text_ws.onmessage = function (event) {
 		    $('#recognised').html(event.data);
         };
+
+        var rms_ws = new WebSocket("ws://127.0.0.1:31131/");
+        rms_ws.onmessage = function (event) {
+            let v = -parseFloat(event.data);
+		    $('#vol').css('height', v + "px");
+        };
     </script>
+
+    <div id='meter'><div id='vol'></div></div>
 
     What I'm hearing at the moment: <br />
     <div id='recognised'></div>
