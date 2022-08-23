@@ -12,6 +12,7 @@ import json
 import asyncio
 import websockets
 import threading
+import textwrap
 from display import Display
 
 
@@ -66,15 +67,9 @@ class AudioProcessor(object):
         async def handler(ws, path):
             while True:
                 text = " ".join(self.lines)
-                line = ""
-                output_lines = []
-                for word in text.split(" "):
-                    if len(line) + len(word) > 15:
-                        output_lines.append(line)
-                        line = word
-                    else:
-                        line += " " + word
-                await ws.send(" ".join(output_lines[-5:]))
+                lines = textwrap.wrap(text, 16)
+                text = " ".join(lines[-5:])
+                await ws.send(text)
                 await asyncio.sleep(1)
 
         loop = asyncio.new_event_loop()
