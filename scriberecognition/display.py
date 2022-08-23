@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 import textwrap
 from rgbmatrix import RGBMatrix, RGBMatrixOptions, graphics
 
