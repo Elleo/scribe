@@ -12,6 +12,7 @@ import json
 import asyncio
 import websockets
 import threading
+from display import Display
 
 
 class AudioProcessor(object):
@@ -22,6 +23,7 @@ class AudioProcessor(object):
         sink.connect("new-sample", self.on_new_sample)
         self.load_model()
         self.lines = [""]
+        self.display = Display()
 
     def load_model(self, text="", language="en-us"):
         words = str(re.split("[.,;!?\-\n]", text.lower())).replace(" '", " \"").replace("',", "\",").replace("['", "[\"").replace("']", "\"]")
@@ -53,6 +55,7 @@ class AudioProcessor(object):
             text = json.loads(self.rec.PartialResult())['partial']
         if len(text) > 0:
             self.lines[-1] = text
+            self.display.show_text(" ".join(self.lines))
             if final:
                 self.lines.append("")
                 if len(self.lines) > 6:
