@@ -40,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'welcome.apps.WelcomeConfig',
+    'shows.apps.ShowsConfig',
+    'settings.apps.SettingsConfig',
     'fontawesomefree'
 ]
 
@@ -128,7 +130,7 @@ STATIC_URL = '/static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-STATICFILES_DIRS = [ os.path.join(BASE_DIR, "welcome/static"),]
+STATICFILES_DIRS = [ os.path.join(BASE_DIR, "welcome/static"), os.path.join(BASE_DIR, "settings/static"), os.path.join(BASE_DIR, "shows/static"),]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_FINDERS = [
         "django.contrib.staticfiles.finders.FileSystemFinder",
