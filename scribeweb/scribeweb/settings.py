@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django.contrib.sites',
+    'smartfields',
     'welcome.apps.WelcomeConfig',
     'shows.apps.ShowsConfig',
     'settings.apps.SettingsConfig',
@@ -137,3 +138,6 @@ STATICFILES_FINDERS = [
         "django.contrib.staticfiles.finders.AppDirectoriesFinder",
 ]
 
+# Media files (User uploaded images)
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
