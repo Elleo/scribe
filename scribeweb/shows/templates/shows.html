@@ -6,4 +6,17 @@
 
 {% block content %}
 
+<div class="shows">
+    {% for show in shows %}
+        <div class="show">
+        </div>
+    {% endfor %}
+    <div class="show">
+        <a href='/shows/add'>
+            <i class="fa-regular fa-square-plus" style='font-size: 128px;'></i><br />
+            New Show
+        </a>
+    </div>
+</div>
+
 {% endblock %}

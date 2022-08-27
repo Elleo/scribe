@@ -78,7 +78,7 @@ h2 {
     font-family: 'Aboreto', serif;
 }
 
-.svg-inline--fa {
+.navbar-link .svg-inline--fa {
     margin-right: 5px;
     margin-left: 1em;
     vertical-align: -0.175em !important;
@@ -187,4 +187,12 @@ td {
     width: 350px;
     margin-left: auto;
     margin-right: auto;
+}
+
+.show {
+    text-align: center;
+}
+
+.show a {
+    text-decoration: none;
 }
