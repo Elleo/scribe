@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.template import loader
 from django.http import HttpResponse
+from .forms import ShowForm
 
 def index(request):
     template = loader.get_template('shows.html')
@@ -9,5 +10,6 @@ def index(request):
 
 def add(request):
     template = loader.get_template('add.html')
-    context = {}
+    show_form = ShowForm()
+    context = {'show_form': show_form}
     return HttpResponse(template.render(context, request))

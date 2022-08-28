@@ -6,4 +6,29 @@
 
 {% block content %}
 
+    <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+		<p>Name<br />
+            {{ show_form.name }}
+		</p>
+
+		<p>Image<br />
+			{{ show_form.image }}
+		</p>
+
+		<p>Language<br />
+			{{ show_form.language }}
+		</p>
+
+		<p>Script<br />
+			{{ show_form.script }}
+		</p>
+
+		<p>{{ show_form.prioritise_accuracy }} <label for='prioritise_accuracy'>Prioritise accuracy</label></p>
+
+		<br />
+
+		<input type='submit' name="submit" value='Add Show' />
+	</form>
+
 {% endblock %}
