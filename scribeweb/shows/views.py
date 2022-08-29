@@ -9,7 +9,7 @@ def convert_post_items(items):
     for key, val in items:
         if val == '':
             values[key] = None
-        elif val == 'true':
+        elif val == 'true' or val == 'on':
             values[key] = True
         elif val == 'false':
             values[key] = False

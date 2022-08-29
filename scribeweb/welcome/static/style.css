@@ -201,6 +201,8 @@ td {
     height: auto;
     max-height: 225px;
     max-width: 256px;
+    border: 1px solid #406882;
+    border-radius: 5px 5px;
 }
 
 .show a {

@@ -9,12 +9,14 @@
 <div class="shows">
     {% for show in shows %}
         <div class="show">
+            <a href='/shows/edit?id={{show.id}}'>
             {% if show.image %}
-                <img src='/media/{{show.image}}' /><br />
+                <img src='/media/{{show.image}}' />
             {% else %}
-                <i class="fa-regular fa-square-plus" style='font-size: 128px;'></i><br />
+                <i class="fa-solid fa-masks-theater" style='font-size: 200px; margin-top: 10px; margin-bottom: 10px;'></i>
             {% endif %}
-            <a href='/shows/edit?id={{show.id}}'>{{show.name}}</a>
+            <br />
+            {{show.name}}</a>
         </div>
     {% endfor %}
     <div class="show">
