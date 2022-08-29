@@ -190,7 +190,17 @@ td {
 }
 
 .show {
+    float: left;
     text-align: center;
+    width: 256px;
+    height: 256px;
+}
+
+.show img {
+    width: auto;
+    height: auto;
+    max-height: 225px;
+    max-width: 256px;
 }
 
 .show a {

@@ -19,7 +19,8 @@ def convert_post_items(items):
 
 def index(request):
     template = loader.get_template('shows.html')
-    context = {}
+    shows = Show.objects.all()
+    context = {'shows': shows}
     return HttpResponse(template.render(context, request))
 
 def add(request):
