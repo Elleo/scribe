@@ -20,4 +20,4 @@ The device can be built for less than £150, making it suitable for small theatr
 The scribe software allows for multiple shows to be configured with individual settings. Performers can upload scripts to the device to guide the speech recognition system and provide for greatly increase accuracy. All speech recognition is done on the device itself and does not require any internet connection during perfomances.
 
 # Logo
-The logo was designed by [Thomas Heasman-Hunt](https://twitter.com/smallrobots)
+The logo was designed by [Thomas Heasman-Hunt](https://twitter.com/smolrobots)
