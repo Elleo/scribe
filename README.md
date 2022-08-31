@@ -1,5 +1,5 @@
 <p align="center">
-<img alt="A small robot for captioning your performances" src="https://github.com/Elleo/scribe/blob/main/scribeweb/welcome/static/logo.png?raw=true"  width=128 height=auto)
+<img alt="A small robot for captioning your performances" src="https://github.com/Elleo/scribe/blob/main/scribeweb/welcome/static/logo.png?raw=true"  width=256 height=auto)
 </p>
 
 # Scribe
