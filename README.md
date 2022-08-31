@@ -1,4 +1,6 @@
-![A small robot for captioning your performances](https://github.com/Elleo/scribe/blob/main/scribeweb/welcome/static/logo.png?raw=true)
+<p align="center">
+![A small robot for captioning your performances](https://github.com/Elleo/scribe/blob/main/scribeweb/welcome/static/logo.png?raw=true | width=128)
+</p>
 
 # Scribe
 Scribe is a device for automatically captioning live performances. Both the hardware and software are open source.
