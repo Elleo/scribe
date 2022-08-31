@@ -1,3 +1,4 @@
+from django.forms.models import model_to_dict
 from django.shortcuts import render, redirect
 from django.template import loader
 from django.http import HttpResponse
@@ -45,7 +46,15 @@ def add(request):
             )
         return redirect("/shows")
     else:
+        edit = False
+        title = "Add Show"
+        if request.GET.get('id') is not None:
+            show = Show.objects.get(id=request.GET.get('id'))
+            show_form = ShowForm(initial=model_to_dict(show))
+            title = show.name
+            edit = True
+        else:
+            show_form = ShowForm
         template = loader.get_template('add.html')
-        show_form = ShowForm()
-        context = {'show_form': show_form}
+        context = {'show_form': show_form, 'edit': edit, 'title': title}
         return HttpResponse(template.render(context, request))
