@@ -10,6 +10,8 @@ difference() {
     cylinder(7, 4, 4);
     translate([7.85, 119.85, -1])
     cylinder(7, 4, 4);
+    translate([127.85, 7.85, -1])
+    cylinder(7, 4, 4);
     translate([247.85, 119.85, -1])
     cylinder(7, 4, 4);
     translate([247.85, 7.85, -1])
