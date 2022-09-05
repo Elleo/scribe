@@ -20,14 +20,14 @@ difference() {
 translate([12.5, 12.5, 5])
 difference() {
     difference() {
-        cube([230, 115.35, 40]);
+        cube([230, 115.35, 45]);
         translate([5, 5, -1])
-        cube([220, 95, 30]);
+        cube([220, 95, 35]);
     }
 
     // Mic stand screw hole
     translate([115, 116, 17])
     rotate([90, 0, 0])
     // Hole should be slightly too small, so thread can be melted in
-    cylinder(20, 15, 15);
+    cylinder(16.1, 15, 15);
 }
