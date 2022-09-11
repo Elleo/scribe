@@ -36,19 +36,4 @@ module case() {
     }
 }
 
-module cut() {
-    translate([200, -1, -1])
-    cube([60, 130, 60]);
-}
-
-difference() {
-    case();
-    cut();
-}
-
-rotate([0, 0, 90])
-translate([-50, -150, 0])
-intersection() {
-    case();
-    cut();
-}
+case();
