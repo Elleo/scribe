@@ -16,6 +16,9 @@ The device can be built for less than £150, making it suitable for small theatr
  * Power supply
  * USB audio capture device
 
+## Case
+ The case can be 3D printed using the STL files in [/case/stl](/case/stl). Select the appropriate case size based on your RGB matrix size and pitch. For each case size there is an STL for the complete case in one piece or if your print bed is not large enough to fit the whole case in one piece there is a version split into two parts.
+
 # Software
 The scribe software allows for multiple shows to be configured with individual settings. Performers can upload scripts to the device to guide the speech recognition system and provide for greatly increased accuracy. All speech recognition is done on the device itself and does not require any internet connection during perfomances.
 
