@@ -55,6 +55,14 @@ module case() {
         cylinder(5, d=4, $fn=64);
         translate([28.9, 8.9, 23])
         cylinder(5, d=4, $fn=64);
+
+        // Raspberry Pi ports
+        translate([-1, 7, 7])
+        cube([7, 15, 17]);
+        translate([-1, 25, 7])
+        cube([7, 15, 17]);
+        translate([-1, 42.8, 9.5])
+        cube([7, 17, 14.5]);
     }
 
 }
