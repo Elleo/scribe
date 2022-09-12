@@ -48,13 +48,13 @@ module case() {
 
         // Raspberry Pi mounting holes
         translate([86.9, 57.9, 23])
-        cylinder(8, d=3, $fn=64);
+        cylinder(5, d=4, $fn=64);
         translate([86.9, 8.9, 23])
-        cylinder(8, d=3, $fn=64);
+        cylinder(5, d=4, $fn=64);
         translate([28.9, 57.9, 23])
-        cylinder(8, d=3, $fn=64);
+        cylinder(5, d=4, $fn=64);
         translate([28.9, 8.9, 23])
-        cylinder(8, d=3, $fn=64);
+        cylinder(5, d=4, $fn=64);
     }
 
 }
