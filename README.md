@@ -16,7 +16,7 @@ The device can be built for less than £150, making it suitable for small theatr
  * [Ada-Fruit RGB Matrix Driver Bonnet](https://thepihut.com/products/adafruit-rgb-matrix-bonnet-for-raspberry-pi-ada3211)
  * [Power supply](https://thepihut.com/products/neopixel-power-brick-5v-5a-25w)
    - [C7 lead](https://thepihut.com/products/figure-8-type-power-cable-2m-c7-uk) (if not included with power supply)
- * USB audio capture device
+ * [USB audio capture device](https://thepihut.com/products/mini-usb-microphone)
  * [M3 x 12mm hex screws](https://uk.rs-online.com/web/p/socket-screws/0281007)
  * [M3 brass inserts](https://uk.rs-online.com/web/p/threaded-inserts/0278534)
 
