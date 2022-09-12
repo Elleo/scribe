@@ -12,6 +12,7 @@ The device can be built for less than £150, making it suitable for small theatr
  * Raspberry Pi 4 (or later)
  * SD card
  * Ada-Fruit 32x64 RGB Matrix
+   - These are available in different element spacing sizes (pitch). Smaller pitch sizes are more appropriate for viewing at close range, while higher pitch values are better viewed at a distance. A 4mm pitch gives a good middle ground for most venues.
  * Ada-Fruit RGB Matrix Driver Hat
  * Power supply
  * USB audio capture device
