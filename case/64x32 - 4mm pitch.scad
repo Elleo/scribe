@@ -1,5 +1,3 @@
-use <RPi4board-modded.scad>
-
 // Base plate
 module case() {
     difference() {
@@ -63,6 +61,15 @@ module case() {
         cube([7, 15, 17]);
         translate([-1, 42.8, 9.5])
         cube([7, 17, 14.5]);
+        rotate([90, 0, 0])
+        translate([37, 20.5, -6])
+        cylinder(7, d=7, $fn=64);
+        translate([46.5, -1, 19.3])
+        cube([9, 7, 4.7]);
+        translate([60, -1, 19.3])
+        cube([9, 7, 4.7]);
+        translate([73.5, -1, 19.3])
+        cube([12, 7, 4.7]);
     }
 
 }
