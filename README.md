@@ -6,15 +6,23 @@
 Scribe is a device for automatically captioning live performances. Both the hardware and software are open source.
 
 # Hardware
-The device can be built for less than £150, making it suitable for small theatres and individual artists on limited budgets.
+The device can be built for approximately £150, making it suitable for small theatres and individual artists on limited budgets.
 
 ## Components
- * Raspberry Pi 4 (or later)
- * SD card
- * Ada-Fruit 32x64 RGB Matrix
- * Ada-Fruit RGB Matrix Driver Hat
- * Power supply
- * USB audio capture device
+ * [Raspberry Pi 4 (or later) with at least 2GB of RAM](https://thepihut.com/products/raspberry-pi-4-model-b?variant=20064052674622) - £45.50
+ * [SD card](https://thepihut.com/products/noobs-preinstalled-sd-card) - £7
+ * [Ada-Fruit 32x64 RGB Matrix](https://thepihut.com/products/adafruit-64x32-rgb-led-matrix-4mm-pitch) - £40.70
+   - These are available in different element spacing sizes (pitch). Smaller pitch sizes are more appropriate for viewing at close range, while higher pitch values are better viewed at a distance. A 4mm pitch gives a good middle ground for most venues.
+ * [Ada-Fruit RGB Matrix Driver Bonnet](https://thepihut.com/products/adafruit-rgb-matrix-bonnet-for-raspberry-pi-ada3211) - £15.20
+ * [Power supply](https://thepihut.com/products/neopixel-power-brick-5v-5a-25w) - £23
+   - [C7 lead](https://thepihut.com/products/figure-8-type-power-cable-2m-c7-uk) (if not included with power supply) - £1
+ * [USB audio capture device](https://thepihut.com/products/mini-usb-microphone) - £5.20
+ * [M3 x 12mm screws or hex screws](https://www.amazon.co.uk/12mm-Socket-Screw-Bolt-Head/dp/B084RFHZ2F) - £5.49 (pack of 20)
+ * [M3 brass inserts](https://www.amazon.co.uk/sourcing-map-Knurled-Insert-Embedding/dp/B09MCWTGLZ) - £6.49 (pack of 50)
+   
+  (You might be able to get screws and brass inserts cheaper by buying them individually from a local hardware store)
+   
+  All prices are including VAT, and were last updated in September 2022. Total cost: £149.58
 
 ## Case
  The case can be 3D printed using the STL files in [/case/stl](/case/stl). Select the appropriate case size based on your RGB matrix size and pitch. For each case size there is an STL for the complete case in one piece or if your print bed is not large enough to fit the whole case in one piece there is a version split into two parts.
