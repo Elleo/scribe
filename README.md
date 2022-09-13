@@ -19,10 +19,11 @@ The device can be built for approximately £150, making it suitable for small th
  * [USB audio capture device](https://thepihut.com/products/mini-usb-microphone) - £5.20
  * [M3 x 12mm screws or hex screws](https://www.amazon.co.uk/12mm-Socket-Screw-Bolt-Head/dp/B084RFHZ2F) - £5.49 (pack of 20)
  * [M3 brass inserts](https://www.amazon.co.uk/sourcing-map-Knurled-Insert-Embedding/dp/B09MCWTGLZ) - £6.49 (pack of 50)
+ * [DC extension cable](https://www.amazon.co.uk/dp/B0792HD7CC) - £4.99
    
   (You might be able to get screws and brass inserts cheaper by buying them individually from a local hardware store)
    
-  All prices are including VAT, and were last updated in September 2022. Total cost: £149.58
+  All prices are including VAT, and were last updated in September 2022. Total cost: £154.57
 
 ## Case
  The case can be 3D printed using the STL files in [/case/stl](/case/stl). Select the appropriate case size based on your RGB matrix size and pitch. For each case size there is an STL for the complete case in one piece or if your print bed is not large enough to fit the whole case in one piece there is a version split into two parts.
