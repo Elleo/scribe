@@ -17,8 +17,8 @@ The device can be built for approximately £150, making it suitable for small th
  * [Power supply](https://thepihut.com/products/neopixel-power-brick-5v-5a-25w) - £23
    - [C7 lead](https://thepihut.com/products/figure-8-type-power-cable-2m-c7-uk) (if not included with power supply) - £1
  * [USB audio capture device](https://thepihut.com/products/mini-usb-microphone) - £5.20
- * [M3 x 12mm screws or hex screws](https://www.amazon.co.uk/12mm-Socket-Screw-Bolt-Head/dp/B084RFHZ2F) - £5.49 (pack of 20)
- * [M3 brass inserts](https://www.amazon.co.uk/sourcing-map-Knurled-Insert-Embedding/dp/B09MCWTGLZ) - £6.49 (pack of 50)
+ * [M3 x 12mm screws or hex screws](https://www.amazon.co.uk/12mm-Socket-Screw-Bolt-Head/dp/B084RFHZ2F) x 9 - £5.49 (pack of 20)
+ * [M3 brass inserts](https://www.amazon.co.uk/sourcing-map-Knurled-Insert-Embedding/dp/B09MCWTGLZ) x 4 - £6.49 (pack of 50)
  * [DC extension cable](https://www.amazon.co.uk/dp/B0792HD7CC) - £4.99
    
   (You might be able to get screws and brass inserts cheaper by buying them individually from a local hardware store)
