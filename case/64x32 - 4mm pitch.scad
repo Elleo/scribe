@@ -27,6 +27,12 @@ module case() {
         cylinder(7, d=3, $fn=64);
         translate([247.85, 7.85, 3])
         cylinder(3, d=6, $fn=64);
+
+        // Holes for plastic prongs
+        translate([7.85, 40, -1])
+        cylinder(7, d=3, $fn=64);
+        translate([247.85, 40, -1])
+        cylinder(7, d=3, $fn=64);
     }
 
     // Box
