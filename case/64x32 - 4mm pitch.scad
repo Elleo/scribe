@@ -76,6 +76,14 @@ module case() {
         cube([9, 7, 4.7]);
         translate([73.5, -1, 19.3])
         cube([12, 7, 4.7]);
+
+        // DC socket hole
+        rotate([0, 90, 0])
+        translate([-10, 80, 224])
+        cylinder(7, d=7, $fn=64);
+        rotate([0, 90, 0])
+        translate([-10, 80, 224])
+        cylinder(4, d=10, $fn=64);
     }
 
 }
