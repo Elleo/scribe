@@ -87,10 +87,10 @@ module case() {
 
         // DC bracket screw holes
         rotate([0, 90, 0])
-        translate([-10, 80, 224])
+        translate([-8, 81, 224])
         cylinder(5, d=3, $fn=64);
         rotate([0, 90, 0])
-        translate([-10, 60, 224])
+        translate([-8, 60, 224])
         cylinder(5, d=3, $fn=64);
     }
 
