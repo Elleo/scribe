@@ -24,7 +24,7 @@ def index(request):
     context = {'shows': shows}
     return HttpResponse(template.render(context, request))
 
-def add(request):
+def add_or_edit(request):
     values = convert_post_items(request.POST.items())
     if request.POST.get('submit') is not None:
         image = request.FILES.get('image')
