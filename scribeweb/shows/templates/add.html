@@ -7,20 +7,31 @@
 
     <form method='POST' enctype="multipart/form-data">
         {% csrf_token %}
+
+        {{ show_form.non_field_errors }}
+
+        {% for hidden in show_form.hidden_fields %}
+        {{ hidden }}
+        {% endfor %}
+
 		<p>Name<br />
-            {{ show_form.name }}
+        {{ show_form.name }}
+        {{ show_form.name.errors }}
 		</p>
 
 		<p>Image<br />
 			{{ show_form.image }}
+            {{ show_form.image.errors }}
 		</p>
 
 		<p>Language<br />
 			{{ show_form.language }}
+            {{ show_form.language.errors }}
 		</p>
 
 		<p>Script<br />
 			{{ show_form.script }}
+            {{ show_form.script.errors }}
             <br />
             <input type="file" name="script_file" accept=".doc,.docx,.md,.txt,.rtf,.md,.pdf" id="id_scipt_file">
 		</p>

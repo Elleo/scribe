@@ -26,30 +26,26 @@ def index(request):
 
 def add_or_edit(request):
     values = convert_post_items(request.POST.items())
+    show_id = request.GET.get('id')
+    title = "Add Show"
+    edit = False
     if request.POST.get('submit') is not None:
-        image = request.FILES.get('image')
-        if image is not None:
-            show = Show.objects.create(
-                    name=values.get('name'),
-                    image=image,
-                    language=values.get('language'),
-                    script=values.get('script'),
-                    prioritise_accuracy=values.get('prioritise_accuracy', False)
-            )
+        if show_id is not None:
+            show = Show.objects.get(id=show_id)
+            edit = True
+            title = show.name
+            show_form = ShowForm(data=request.POST, instance=show)
         else:
-            # Work around ImageField not accepting None correctly
-            show = Show.objects.create(
-                    name=values.get('name'),
-                    language=values.get('language'),
-                    script=values.get('script'),
-                    prioritise_accuracy=values.get('prioritise_accuracy', False)
-            )
-        return redirect("/shows")
+            show_form = ShowForm(data=request.POST)
+        if show_form.is_valid():
+            show_form.save()
+            return redirect("/shows")
+        else:
+            context = {'show_form': show_form, 'edit': edit, 'title': title}
+            return HttpResponse(template.render(context, request))
     else:
-        edit = False
-        title = "Add Show"
-        if request.GET.get('id') is not None:
-            show = Show.objects.get(id=request.GET.get('id'))
+        if show_id is not None:
+            show = Show.objects.get(id=show_id)
             show_form = ShowForm(initial=model_to_dict(show))
             title = show.name
             edit = True
