@@ -42,7 +42,10 @@ def add_or_edit(request):
         else:
             show_form = ShowForm(data=request.POST)
         if show_form.is_valid():
-            show_form.save()
+            show = show_form.save()
+            if 'script_file' in request.FILES:
+                show.script = request.FILES['script_file'].read().decode()
+                show.save()
             return redirect("/shows")
         else:
             context = {'show_form': show_form, 'edit': edit, 'title': title}
