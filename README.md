@@ -33,3 +33,14 @@ The scribe software allows for multiple shows to be configured with individual s
 
 # Logo
 The logo was kindly designed by [Thomas Heasman-Hunt](https://twitter.com/smolrobots)
+
+# Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
