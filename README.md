@@ -1,7 +1,4 @@
 <p align="center">
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
 <img alt="A small robot for captioning your performances" src="https://github.com/Elleo/scribe/blob/main/logo.png?raw=true"  width=256 height=auto)
 </p>
 
@@ -34,16 +31,12 @@ The device can be built for approximately £150, making it suitable for small th
 # Software
 The scribe software allows for multiple shows to be configured with individual settings. Performers can upload scripts to the device to guide the speech recognition system and provide for greatly increased accuracy. All speech recognition is done on the device itself and does not require any internet connection during perfomances.
 
-# Logo
-The logo was kindly designed by [Thomas Heasman-Hunt](https://twitter.com/smolrobots)
-
-## Contributors ✨
-
-Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+# Contributors
 
 <!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
 <!-- prettier-ignore-start -->
 <!-- markdownlint-disable -->
+
 <table>
   <tbody>
     <tr>
@@ -58,3 +51,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## Logo
+The logo was kindly designed by [Thomas Heasman-Hunt](https://twitter.com/smolrobots)
+
