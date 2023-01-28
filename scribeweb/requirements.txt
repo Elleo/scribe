@@ -1,2 +1,3 @@
 fontawesomefree==6.1.2
 Django==3.2.16
+django_smartfields==1.1.3
