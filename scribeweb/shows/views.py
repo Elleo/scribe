@@ -49,6 +49,9 @@ def add_or_edit(request):
                 pd = pandoc.read(request.FILES['script_file'].read(), format=doc_format)
                 show.script = pandoc.write(pd, format="plain")
                 show.save()
+            if 'image' in request.FILES:
+                show.image = request.FILES.get('image')
+                show.save()
             return redirect("/shows")
         else:
             context = {'show_form': show_form, 'edit': edit, 'title': title}
