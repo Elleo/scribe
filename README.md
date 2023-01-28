@@ -31,5 +31,27 @@ The device can be built for approximately £150, making it suitable for small th
 # Software
 The scribe software allows for multiple shows to be configured with individual settings. Performers can upload scripts to the device to guide the speech recognition system and provide for greatly increased accuracy. All speech recognition is done on the device itself and does not require any internet connection during perfomances.
 
-# Logo
+# Contributors
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/Elleo"><img src="https://avatars.githubusercontent.com/u/59350?v=4?s=100" width="100px;" alt="Mike Sheldon"/><br /><sub><b>Mike Sheldon</b></sub></a><br /><a href="https://github.com/Elleo/scribe/commits?author=Elleo" title="Code">💻</a> <a href="#ideas-Elleo" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-Elleo" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-Elleo" title="Maintenance">🚧</a> <a href="#projectManagement-Elleo" title="Project Management">📆</a> <a href="#financial-Elleo" title="Financial">💵</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+
+## Logo
 The logo was kindly designed by [Thomas Heasman-Hunt](https://twitter.com/smolrobots)
+
