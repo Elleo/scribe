@@ -42,6 +42,15 @@
 
         {% if edit %}
             <input type='submit' name="submit" value='Edit Show' />
+            <button onclick='$("#confirmDelete")[0].showModal(); return false;'>Delete Show</button>
+
+            <dialog id='confirmDelete'>
+                Are you sure you want to delete this show?<br />
+                <br />
+                <input type='submit' name='delete' value='Yes' />
+                <button value='cancel' onclick='$("#confirmDelete")[0].close(); return false;'>No</button>
+            </dialog>
+
         {% else %}
             <input type='submit' name="submit" value='Add Show' />
         {% endif %}
