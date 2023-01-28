@@ -106,14 +106,14 @@ a:hover {
     text-decoration: underline;
 }
 
-select, input {
+select, input, button {
     background: white;
     border: 1px solid #999;
     border-radius: 5px;
     color: black;
-}
-
-select, input {
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1px;
     padding: 5px;
 }
 
@@ -121,11 +121,12 @@ input[type="text"], input[type="url"], input[type="tel"], input[type="email"], i
     width: 300px;
 }
 
-input[type="submit"]:hover {
+input[type="submit"]:hover, button:hover {
     border-bottom: 2px solid #333;
+    margin-bottom: 0px;
 }
 
-input[type="submit"]:active {
+input[type="submit"]:active, button:active {
     border-bottom: 1px solid #999 !important;
 }
 

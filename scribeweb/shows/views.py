@@ -29,7 +29,11 @@ def add_or_edit(request):
     show_id = request.GET.get('id')
     title = "Add Show"
     edit = False
-    if request.POST.get('submit') is not None:
+    if request.POST.get('delete') is not None:
+        if show_id is not None:
+            Show.objects.get(id=show_id).delete()
+        return redirect("/shows")
+    elif request.POST.get('submit') is not None:
         if show_id is not None:
             show = Show.objects.get(id=show_id)
             edit = True
