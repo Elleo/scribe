@@ -1,3 +1,4 @@
+import pandoc
 from django.forms.models import model_to_dict
 from django.shortcuts import render, redirect
 from django.template import loader
@@ -42,7 +43,12 @@ def add_or_edit(request):
         else:
             show_form = ShowForm(data=request.POST)
         if show_form.is_valid():
-            show_form.save()
+            show = show_form.save()
+            if 'script_file' in request.FILES:
+                doc_format = pandoc.format_from_filename(request.FILES['script_file'].name)
+                pd = pandoc.read(request.FILES['script_file'].read(), format=doc_format)
+                show.script = pandoc.write(pd, format="plain")
+                show.save()
             return redirect("/shows")
         else:
             context = {'show_form': show_form, 'edit': edit, 'title': title}
