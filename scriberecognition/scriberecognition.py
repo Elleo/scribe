@@ -94,7 +94,7 @@ class AudioProcessor(object):
 
         async def rms_handler(ws, path):
             while True:
-                await ws.send(str(self.rms))
+                await ws.send(str(max(self.rms, -60)))
                 await asyncio.sleep(0.3)
 
         loop = asyncio.new_event_loop()
