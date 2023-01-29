@@ -31,13 +31,13 @@ class AudioProcessor(object):
         self.rms = 0
 
     def load_model(self, text="", language="en-us"):
-        words = str(re.split("[.,;!?\-\n]", text.lower())).replace(" '", " \"").replace("',", "\",").replace("['", "[\"").replace("']", "\"]")
+        words = str(re.split("[.,;!?\-\n]", text.lower()) + ["[unk]"]).replace(" '", " \"").replace("',", "\",").replace("['", "[\"").replace("']", "\"]")
         model = Model(lang=language)
-        if words != '[""]':
+        self.unconstrained = KaldiRecognizer(model, 16000)
+        if words != '["", "[unk]"]':
             self.rec = KaldiRecognizer(model, 16000, words)
         else:
-            print("Unconstrained")
-            self.rec = KaldiRecognizer(model, 16000)
+            self.rec = self.unconstrained
 
     def start(self):
         self.pipeline.set_state(Gst.State.PLAYING)
@@ -53,11 +53,21 @@ class AudioProcessor(object):
         buf = sample.get_buffer()
         success, map_info = buf.map(Gst.MapFlags.READ)
         final = False
+        unconstrained_final = False
+        if self.unconstrained.AcceptWaveform(map_info.data):
+            unconstrained_final = True
         if self.rec.AcceptWaveform(map_info.data):
             text = json.loads(self.rec.Result())['text']
             final = True
         else:
             text = json.loads(self.rec.PartialResult())['partial']
+        if '[unk]' in text:
+            if unconstrained_final:
+                text = json.loads(self.unconstrained.Result())['text']
+                final = True
+            else:
+                text = json.loads(self.unconstrained.PartialResult())['partial']
+                final = False
         if len(text) > 0:
             text = re.sub(r'(\b)i(\b)', '\1I\2', text)
             self.lines[-1] = text
