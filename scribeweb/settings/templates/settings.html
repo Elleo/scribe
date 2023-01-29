@@ -8,8 +8,12 @@
 
 <h3>Wifi</h3>
 <br />
-<p>Currently connected to: <b>{{ current_ssid }}</b></p>
+<p>Currently connected to: <b>{{ current_network }}</b></p>
 
-<p>Available networks:</p>
+<p>Available networks:<br />
+{% for network in networks %}
+<button style='width: 300px;'>{{ network }}</button><br />
+{% endfor %}
+</p>
 
 {% endblock %}
