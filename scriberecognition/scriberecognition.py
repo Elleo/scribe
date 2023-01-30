@@ -45,6 +45,8 @@ class AudioProcessor(object):
                 self.load_model(script)
         elif self.rec is None:
             self.load_model()
+        else:
+            self.rec = self.unconstrained
         db.close()
 
     def load_model(self, text="", language="en-us"):

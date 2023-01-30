@@ -29,12 +29,16 @@
             }
         }
 
+        function set_show(elem) {
+            $.get("/set_show", { "show" : elem.value });
+        }
+
         connect("ws://127.0.0.1:31130/", text_message);
         connect("ws://127.0.0.1:31131/", rms_message);
     </script>
 
     <div id='show'>
-        Current show: <select>
+        Current show: <select onchange='set_show(this)'>
             <option value='none'>None</option>
             {% for show in shows %}
                 <option value='{{show.id}}' {% if show.active %} selected {% endif %}>{{show}}</option>
