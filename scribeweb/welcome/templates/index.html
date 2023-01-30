@@ -7,17 +7,46 @@
 {% block content %}
 
     <script>
-        var text_ws = new WebSocket("ws://127.0.0.1:31130/");
-        text_ws.onmessage = function (event) {
-		    $('#recognised').html(event.data);
-        };
+        function text_message(event) {
+            $('#recognised').html(event.data);
+        }
 
-        var rms_ws = new WebSocket("ws://127.0.0.1:31131/");
-        rms_ws.onmessage = function (event) {
+        function rms_message(event) {
             let v = -parseFloat(event.data) * 3;
-		    $('#vol').css('height', v + "px");
-        };
+            $('#vol').css('height', v + "px");
+        }
+
+        function connect(address, message_callback) {
+            var ws = new WebSocket(address);
+            ws.onmessage = message_callback;
+            ws.onclose = function(event) {
+                setTimeout(function() {
+                    connect(address, message_callback);
+                }, 1000);
+            };
+            ws.onerror = function(err) {
+                ws.close();
+            }
+        }
+
+        function set_show(elem) {
+            $.get("/set_show", { "show" : elem.value });
+        }
+
+        connect("ws://127.0.0.1:31130/", text_message);
+        connect("ws://127.0.0.1:31131/", rms_message);
     </script>
+
+    <div id='show'>
+        Current show: <select onchange='set_show(this)'>
+            <option value='none'>None</option>
+            {% for show in shows %}
+                <option value='{{show.id}}' {% if show.active %} selected {% endif %}>{{show}}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <br />
 
     <div id='hearing'>
         <div id='meter'><div id='vol'></div></div>
