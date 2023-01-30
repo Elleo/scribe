@@ -48,7 +48,7 @@ module case() {
         translate([115, 116, 8])
         rotate([90, 0, 0])
         // Hole should be slightly too small, so thread can be melted in
-        cylinder(16.1, d=15, $fn=64);
+        cylinder(16.1, d=15.5, $fn=64);
 
         // Raspberry Pi mounting holes
         translate([86.9, 57.9, 23])
