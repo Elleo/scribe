@@ -13,6 +13,7 @@ import asyncio
 import websockets
 import threading
 import textwrap
+import sqlite3
 from display import Display
 
 
@@ -25,12 +26,31 @@ class AudioProcessor(object):
         bus = self.pipeline.get_bus()
         bus.add_signal_watch()
         bus.connect('message::element', self.on_message)
-        self.load_model()
+        self.active_show = None
+        self.rec = None
+        self.get_script()
         self.lines = [""]
         self.display = Display()
         self.rms = 0
 
+    def get_script(self):
+        db = sqlite3.connect("../scribeweb/db.sqlite3")
+        res = db.execute("SELECT id FROM shows_show WHERE active IS TRUE")
+        row = res.fetchone()
+        if row:
+            if self.active_show != row[0]:
+                self.active_show = row[0]
+                script_res = db.execute("SELECT script FROM shows_show WHERE active IS TRUE")
+                script = script_res.fetchone()[0]
+                self.load_model(script)
+        elif self.rec is None:
+            self.load_model()
+        db.close()
+
     def load_model(self, text="", language="en-us"):
+        text = text.replace("\"", "")
+        text = text.replace("(", "")
+        text = text.replace(")", "")
         words = str(re.split("[.,;!?\-\n]", text.lower()) + ["[unk]"]).replace(" '", " \"").replace("',", "\",").replace("['", "[\"").replace("']", "\"]")
         model = Model(lang=language)
         self.unconstrained = KaldiRecognizer(model, 16000)
@@ -97,13 +117,18 @@ class AudioProcessor(object):
                 await ws.send(str(max(self.rms, -60)))
                 await asyncio.sleep(0.3)
 
+        async def check_script():
+            while True:
+                self.get_script()
+                await asyncio.sleep(5)
+
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
-
         text_server = websockets.serve(text_handler, "localhost", 31130)
         loop.run_until_complete(text_server)
         rms_server = websockets.serve(rms_handler, "localhost", 31131)
         loop.run_until_complete(rms_server)
+        loop.run_until_complete(loop.create_task(check_script()))
         loop.run_forever()
 
 

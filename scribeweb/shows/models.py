@@ -34,6 +34,7 @@ class Show(models.Model):
             format='JPEG', scale={'max_width': 1280, 'max_height': 1280})
             )
         ])
+    active = models.BooleanField(default=False)
 
     def __str__(self):
         return self.name
