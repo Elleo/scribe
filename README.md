@@ -12,7 +12,7 @@ The device can be built for approximately £160, making it suitable for small th
  * [Raspberry Pi 4 (or later) with at least 2GB of RAM](https://thepihut.com/products/raspberry-pi-4-model-b?variant=20064052674622) - £45.50
  * [SD card](https://thepihut.com/products/noobs-preinstalled-sd-card) - £7
  * [Ada-Fruit 32x64 RGB Matrix](https://thepihut.com/products/adafruit-64x32-rgb-led-matrix-4mm-pitch) - £40.70
-   - These are available in different element spacing sizes (pitch). Smaller pitch sizes are more appropriate for viewing at close range, while higher pitch values are better viewed at a distance. A 4mm pitch gives a good middle ground for most venues.
+   - These are available in different element spacing sizes (pitch). Smaller pitch sizes are more appropriate for viewing at close range, while higher pitch values are better viewed at a distance. A 4mm pitch gives a good middle ground for most venues. Currently only the 4mm pitch size has a case designed.
  * [Ada-Fruit RGB Matrix Driver Bonnet](https://thepihut.com/products/adafruit-rgb-matrix-bonnet-for-raspberry-pi-ada3211) - £15.20
  * [Power supply](https://thepihut.com/products/neopixel-power-brick-5v-5a-25w) - £23
    - [C7 lead](https://thepihut.com/products/figure-8-type-power-cable-2m-c7-uk) (if not included with power supply) - £1
