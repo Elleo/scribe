@@ -27,7 +27,7 @@ The device can be built for approximately £170, making it suitable for small th
   All prices are including VAT, and were last updated in January 2023. Total cost: £171.52
 
 ## Case
- *NOTE:* The case design is still being prototyped, the current iteration has a number of issues that are being worked on, so it's recommended that you don't print a case for now.
+ *NOTE: The case design is still being prototyped, the current iteration has a number of issues that are being worked on, so it's recommended that you don't print a case for now.*
 
  The case can be 3D printed using the STL files in [/case/stl](/case/stl). Select the appropriate case size based on your RGB matrix size and pitch. For each case size there is an STL for the complete case in one piece or if your print bed is not large enough to fit the whole case in one piece there is a version split into two parts.
 
