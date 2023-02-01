@@ -126,9 +126,9 @@ class AudioProcessor(object):
 
         loop = asyncio.new_event_loop()
         asyncio.set_event_loop(loop)
-        text_server = websockets.serve(text_handler, "localhost", 31130)
+        text_server = websockets.serve(text_handler, "0.0.0.0", 31130)
         loop.run_until_complete(text_server)
-        rms_server = websockets.serve(rms_handler, "localhost", 31131)
+        rms_server = websockets.serve(rms_handler, "0.0.0.0", 31131)
         loop.run_until_complete(rms_server)
         loop.run_until_complete(loop.create_task(check_script()))
         loop.run_forever()
