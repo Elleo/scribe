@@ -11,7 +11,7 @@ def index(request):
 
 def set_show(request):
     for show in Show.objects.all():
-        if show.id == int(request.GET.get('show')):
+        if request.GET.get('show') != 'none' and show.id == int(request.GET.get('show')):
             show.active = True
         else:
             show.active = False
